@@ -1,0 +1,231 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #008000;
+}
+
+p{
+  margin: 0;
+  padding: 0;
+}
+
+.menu{
+  width: 100vw;
+  height: 100px;
+  background-color: #808000;
+}
+
+.content{
+  display: flex;
+  justify-content: space-between;
+}
+
+.cell{
+  width: 33.3vw;
+  height: 100%
+}
+
+.cell583900{
+  display: flex;
+}
+
+.wrap_squares{
+  margin-top: 90px;
+}
+
+.red_squares{
+  width: 400px;
+  display: flex;
+  transform: rotate(-45deg);
+}
+
+.square{
+  width: 150px;
+  height: 150px;
+  background-color: red;
+  margin-right: 50px;
+}
+
+#cell_2{
+  display: flex;
+  align-items: center;
+}
+
+.blue_rectangles{
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wrap_rectangles{
+  margin-right: 20px;
+}
+
+.rectangle{
+  width: 200px;
+  height: 25px;
+  background-color: #0000ff;
+  z-index: 10;
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+#needle:after{
+  margin-left: 200px;
+  content: ' ';
+  display: block;
+  width: 100px;
+  height: 15px;
+  background-color: #0000ff;
+  border-radius: 0% 100% 100% 0%;
+}
+
+
+.circle{
+  width: 200px;
+  height: 200px;
+  background-color: #008080;
+  border-radius: 100px;
+  animation: circleanim 2s infinite linear;
+  cursor: pointer;
+  z-index: 1;
+  
+}
+
+.wrap_text_rectangle{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.text_rectangle{
+  width: 150px;
+  height: 500px;
+  background-color: #fff;
+  margin-top: 60px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  transition: all 2s linear;
+}
+
+@media only screen and (min-width: 583px) and (max-width: 900px){
+  .cell583900{
+    flex-direction: column;
+  }
+
+  #cell_2{
+    margin-top: 200px;
+    margin-left: 10px;
+  }
+
+  .text_rectangle{
+    background-color: #c83737;
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 583px){
+  body{
+    overflow-x: hidden;
+  }
+
+  .content, .cell583900{
+    flex-direction: column;
+  }
+
+  .cell{
+    width: 100%;
+  }
+
+  #cell_2{
+    margin-top: 200px;
+    margin-left: 10px;
+  }
+
+  .wrap_text_rectangle{
+    display: flex;
+    justify-content: center;
+  }
+
+  .text_rectangle{
+    background-color: #0000ff;
+  }
+
+}
+
+.square, .sq1, .sq2, .sq1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+}
+
+.square:hover, .sq1:hover, .sq2:hover{
+  transition: 1s;
+  transform: rotate3d(1, 1, 0, 45deg);
+  padding: 25px;
+}
+
+.sq1:hover{
+  background: #008000;
+}
+
+.sq2:hover{
+  background: #0000ff;
+}
+
+.sq1{
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  animation: rotate_anim1 10s infinite linear;
+}
+
+.sq2{
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  animation: rotate_anim2 2s infinite linear;
+}
+
+
+/* animations */
+
+
+@keyframes rotate_anim1{
+  0%{
+    transform: rotate(0deg);
+  }
+100%{
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate_anim2{
+  0%{
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  50%{
+    transform: rotate(-180deg);
+    opacity: 0.5;
+  }
+100%{
+    transform: rotate(-360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes circleanim{
+  0%{
+    background: linear-gradient(to right, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%);
+    transform: rotate(0deg);
+  }
+  50%{
+    background: linear-gradient(to right, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%);
+  }
+  100%{
+    background: linear-gradient(to right, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%);
+    transform: rotate(360deg);
+  }
+}
